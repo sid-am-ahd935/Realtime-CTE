@@ -10,7 +10,7 @@ const domain = process.env.RAILWAY_PUBLIC_DOMAIN || "http://localhost"
 
 app.get("/", (req, res) => {
   console.log("'/' path requested");
-  res.sendFile(__dirname + "/index.html");
+  return res.sendFile(__dirname + "/index.html");
 });
 
 let text = "";
