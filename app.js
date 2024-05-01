@@ -31,5 +31,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => {
-  if(DEBUG === true) console.log(`server running at ${domain}:${port}`);
+  console.log(`server running at ${domain}:${port}`);
 });
