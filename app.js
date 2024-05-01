@@ -5,6 +5,7 @@ const { Server } = require("socket.io");
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   console.log("'/' path requested");
@@ -27,6 +28,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(8000, () => {
-  console.log("server running at http://localhost:8000");
+server.listen(port, () => {
+  console.log(`server running at http://localhost:${PORT}`);
 });
