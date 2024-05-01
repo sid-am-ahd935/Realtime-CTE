@@ -6,6 +6,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 const port = process.env.PORT || 3000;
+const domain = process.env.RAILWAY_PUBLIC_DOMAIN || "http://localhost"
 
 app.get("/", (req, res) => {
   console.log("'/' path requested");
@@ -29,5 +30,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => {
-  console.log(`server running at http://localhost:${PORT}`);
+  console.log(`server running at ${domain}:${port}`);
 });
